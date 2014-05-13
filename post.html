@@ -1,0 +1,25 @@
+{if $post_type != "webpage"}
+
+<article>
+<header>
+{if $post_title}
+<h2><a href="{$post_url}" rel="bookmark" title="Permanent Link to '{$post_title|escape:'html'}'">{$post_title}</a></h2>
+{/if}
+<div class="post-meta">
+By <span>{$post_author}</span>
+</div>
+</header>
+<div class="post-body">
+<div class="read-more">
+<a href="{$post_url}#comment">{$post_comments}</a>
+</div>
+</div>
+</article>
+{elseif $post_type == "webpage"}
+
+<article>
+<header>
+<h1 class="page-header">{$post_title}</h1>
+</header>
+</article>
+{/if}

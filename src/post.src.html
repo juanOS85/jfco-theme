@@ -1,0 +1,48 @@
+{if $post_type != "webpage"}
+  <!-- div id=post_{$id} class="post {$post_type} {if $sticky}  sticky{/if}">
+
+
+  {if $post_title}
+    <h2><a href="{$post_url}" rel="bookmark" title="Permanent Link to '{$post_title|escape:'html'}'">{$post_title}</a></h2>
+    {/if}
+  <div class="metadate">Posted By {$post_author} on <span class="time">{$created|date_format:"%b %e, %Y"} at {$created|date_format:"%l:%M%p"}</span></div>
+  <div class="post_content">{$post_content}</div>
+  <div class="clear"></div>
+  {if $post_categories || $post_tags}<div class="metalabels">{if $post_categories}Filed in: {$post_categories} | {/if} {if $post_tags}Tagged with: {$post_tags}{/if}</div>{/if}
+
+  <div class="metacomment"><a href="{$post_url}#comment" >{$post_comments}</a> -- {$post_totalcount} {if $post_edit} -- <span class="edit">{$post_edit}</span> {/if}</div>
+
+
+  </div -->
+  <article>
+    <header>
+      {if $post_title}
+        <h2><a href="{$post_url}" rel="bookmark" title="Permanent Link to '{$post_title|escape:'html'}'">{$post_title}</a></h2>
+      {/if}
+
+      <div class="post-meta">
+        By <span>{$post_author}</span>
+      </div>
+    </header>
+
+    <div class="post-body">
+      <div class="read-more">
+        <a href="{$post_url}#comment">{$post_comments}</a>
+      </div>
+    </div>
+  </article>
+{elseif $post_type == "webpage"}
+  <!-- div id=post_{$id} class="post {$post_type} {if $sticky}  sticky{/if}">
+      <h2>{$post_title}</h2>
+      <div class="post_content">
+          {$post_content}
+          {if $post_edit}<span class="edit">{$post_edit}</span> {/if}
+      </div>
+
+  </div -->
+  <article>
+    <header>
+      <h1 class="page-header">{$post_title}</h1>
+    </header>
+  </article>
+{/if}
