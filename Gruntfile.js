@@ -35,7 +35,7 @@ module.exports = function(grunt) {
         tasks: 'theme'
       },
       html: {
-        files: ['index.src.html'],
+        files: ['src/*.src.html'],
         tasks: 'html'
       }
 
@@ -43,9 +43,13 @@ module.exports = function(grunt) {
 
     htmlcompressor: {
       compile: {
-        files: {
-          'index.html': 'index.src.html'
-        },
+        files: [{
+          src: 'src/page.src.html',
+          dest: 'page.html'
+        }, {
+          src: 'src/post.src.html',
+          dest: 'post.html'
+        }],
         options: {
           type: 'html',
           preserveServerScript: true,
@@ -57,7 +61,8 @@ module.exports = function(grunt) {
 
     lineremover: {
       noOptions: {
-        'index.html': 'index.html'
+        'page.html': 'page.html',
+        'post.html': 'post.html'
       }
     }
   });
