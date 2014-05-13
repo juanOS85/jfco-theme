@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 
     watch: {
       main: {
-        files: ['css/jfco.sass', 'css/sass/*.sass'],
+        files: ['css/sass/*.sass'],
         tasks: 'theme'
       }
     },
