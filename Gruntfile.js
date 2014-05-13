@@ -12,6 +12,14 @@ module.exports = function(grunt) {
       }
     },
 
+    cssmin: {
+      compress: {
+        files: {
+          'css/jfco.min.css': ['css/jfco.css']
+        }
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -25,7 +33,12 @@ module.exports = function(grunt) {
       main: {
         files: ['css/sass/*.sass'],
         tasks: 'theme'
+      },
+      html: {
+        files: ['index.src.html'],
+        tasks: 'html'
       }
+
     },
 
     htmlcompressor: {
@@ -51,13 +64,17 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
   grunt.loadNpmTasks( 'grunt-contrib-connect' );
   grunt.loadNpmTasks( 'grunt-htmlcompressor' );
   grunt.loadNpmTasks( 'grunt-line-remover' );
 
-  // Theme task
-  grunt.registerTask('theme', ['sass']);
-
   // Serve
-  grunt.registerTask('serve', [ 'htmlcompressor', 'lineremover', 'connect', 'watch']);
+  grunt.registerTask('serve', ['htmlcompressor', 'lineremover', 'connect', 'watch']);
+
+  // Theme task
+  grunt.registerTask('theme', ['sass', 'cssmin']);
+
+  // Theme task
+  grunt.registerTask('html', ['htmlcompressor', 'lineremover']);
 };
