@@ -20,11 +20,11 @@ JFashion
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-9">
-{if $post_type != "webpage"}
+{if $is_homepage}
 <div class="posts-list">
 {/if}
 {$page_content}
-{if $post_type != "webpage"}
+{if $is_homepage}
 </div>
 {/if}
 </div>
@@ -34,7 +34,8 @@ JFashion
 <footer>
 </footer>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
-<<script>$(function(){var a=$('input[type="submit"], button'),b=$("textarea");a.attr("class","");a.addClass("btn");b.attr("class","");b.addClass("form-control")});</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
+<script>$(function(){var a=$('input[type="submit"], button'),b=$("textarea");a.attr("class","");a.addClass("btn");b.attr("class","");b.addClass("form-control");$(".post-date").timeago()});</script>
 </body>
 </html>

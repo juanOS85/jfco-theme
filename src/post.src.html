@@ -20,7 +20,7 @@
     {/if}
 
     <div class="post-meta">
-      By <span>{$post_author}</span>
+      <em>Posted <abbr class="post-date" title={$created|date_format:"%Y-%m-%dT%TZ"}>{$created|date_format:"%b %d, %Y"}</abbr> by </em><span class="post-author">{$post_author}</span>
     </div>
   </header>
 

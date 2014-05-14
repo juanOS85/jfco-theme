@@ -2,6 +2,7 @@
 // Colors
 $burgundy: #800020
 $black: #000
+$gray: #eee
 $white: #fff
 
 // Fonts
@@ -9,14 +10,17 @@ $primary-font: "Open Sans", sans-serif
 
 // Global
 body
-  font: 300 62.5% $primary-font
+  font: 300 62.5%/1.5 $primary-font
   padding-top: 70px // Bootstrap navbar fixed to top
+
+a, a:visited
+  color: $burgundy
 
 h1, h2, h3, h4, h5, h6
   font-weight: 600
 
 p
-  font-size: 2rem
+  font-size: 1.6rem
 
 .navbar
   background-color: $burgundy
@@ -24,11 +28,32 @@ p
 
 .posts-list
   article
-    margin-bottom: 1px solid $burgundy
+    border-bottom: 1px solid $burgundy
+    padding-bottom: 20px
 
     h2 a
       color: $black
 
+    .post-meta
+      font-size: 1.7rem
+      margin: 6px 0
+
+      .post-author
+        a, a:visited, a:hover
+          font-weight: 600
+          text-decoration: none
+
+    .post-body
+      margin-top: 10px
+
+    .read-more
+      background-color: $gray
+      font-size: 1.7rem
+      margin-top: 15px
+      padding: 10px 15px
+
+
+// Comment box
 .onsugar-box
   input[type="submit"]
     font-weight: 600
