@@ -1,16 +1,26 @@
 // Variables
 // Colors
 $burgundy: #800020
+$black: #000
 
 // Fonts
 $primary-font: "Open Sans", sans-serif
 
 // Global
 body
-  font: 300 0.9em/1.5 $primary-font
+  font: 300 62.5% $primary-font
   padding-top: 70px // Bootstrap navbar fixed to top
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 600
 
 .navbar
   background-color: $burgundy
   color: #fff
 
+.posts-list
+  article
+    margin-bottom: 1px solid $burgundy
+
+    h2 a
+      color: $black
