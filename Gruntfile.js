@@ -49,6 +49,9 @@ module.exports = function(grunt) {
         }, {
           src: 'src/post.src.html',
           dest: 'post.html'
+        }, {
+          src: 'src/comment.src.html',
+          dest: 'comment.html'
         }],
         options: {
           type: 'html',
@@ -62,7 +65,8 @@ module.exports = function(grunt) {
     lineremover: {
       noOptions: {
         'page.html': 'page.html',
-        'post.html': 'post.html'
+        'post.html': 'post.html',
+        'comment.html': 'comment.html'
       }
     }
   });

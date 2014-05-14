@@ -43,5 +43,19 @@
     </footer>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
+
+    <<script>
+      $(function() {
+        var $buttons = $('input[type="submit"], button'),
+          $textareas = $('textarea');
+
+        $buttons.attr('class', '');
+        $buttons.addClass('btn');
+
+        $textareas.attr('class', '');
+        $textareas.addClass('form-control');
+      });
+    </script>
   </body>
 </html>

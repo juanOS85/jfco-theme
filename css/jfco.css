@@ -5,6 +5,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600; }
 
+p {
+  font-size: 2rem; }
+
 .navbar {
   background-color: #800020;
   color: white; }
@@ -13,3 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1px solid #800020; }
   .posts-list article h2 a {
     color: black; }
+
+.onsugar-box input[type="submit"] {
+  font-weight: 600; }

@@ -1,4 +1,3 @@
-{if $post_type != "webpage"}
 
 <article>
 <header>
@@ -16,11 +15,3 @@ By <span>{$post_author}</span>
 </div>
 </div>
 </article>
-{elseif $post_type == "webpage"}
-
-<article>
-<header>
-<h1 class="page-header">{$post_title}</h1>
-</header>
-</article>
-{/if}

@@ -1,4 +1,3 @@
-{if $post_type != "webpage"}
   <!-- div id=post_{$id} class="post {$post_type} {if $sticky}  sticky{/if}">
 
 
@@ -14,36 +13,22 @@
 
 
   </div -->
-  <article>
-    <header>
-      {if $post_title}
-        <h2><a href="{$post_url}" rel="bookmark" title="Permanent Link to '{$post_title|escape:'html'}'">{$post_title}</a></h2>
-      {/if}
+<article>
+  <header>
+    {if $post_title}
+      <h2><a href="{$post_url}" rel="bookmark" title="Permanent Link to '{$post_title|escape:'html'}'">{$post_title}</a></h2>
+    {/if}
 
-      <div class="post-meta">
-        By <span>{$post_author}</span>
-      </div>
-    </header>
-
-    <div class="post-body">
-      {$post_content}
-      <div class="read-more">
-        <a href="{$post_url}#comment">{$post_comments}</a>
-      </div>
+    <div class="post-meta">
+      By <span>{$post_author}</span>
     </div>
-  </article>
-{elseif $post_type == "webpage"}
-  <!-- div id=post_{$id} class="post {$post_type} {if $sticky}  sticky{/if}">
-      <h2>{$post_title}</h2>
-      <div class="post_content">
-          {$post_content}
-          {if $post_edit}<span class="edit">{$post_edit}</span> {/if}
-      </div>
+  </header>
 
-  </div -->
-  <article>
-    <header>
-      <h1 class="page-header">{$post_title}</h1>
-    </header>
-  </article>
-{/if}
+  <div class="post-body">
+    {$post_content}
+    <div class="read-more">
+      <a href="{$post_url}#comment">{$post_comments}</a>
+    </div>
+  </div>
+</article>
+
