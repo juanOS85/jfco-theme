@@ -1,7 +1,14 @@
-<div id=comment_{$id} class="comment">
-  {if $new != ''}<span class="new">{$new}</span>{/if}
-  <div class="comment_photo">{$comment_author_photo_small}</div>
-  <div class="comment_author">posted by {$comment_author}</div>
-  <div class="comment_date">{$comment_date}</div>
-  <div class="comment_content">{$comment_content}</div>
+<div id=comment_{$id} class="comment col-md-12">
+  <div class="row">
+    {if $new != ''}<span class="new">{$new}</span>{/if}
+    <div class="comment_photo pull-left">{$comment_author_photo_small}</div>
+
+    <div class="comment-meta pull-left">
+      <div class="comment_author pull-left">{$comment_author}</div>
+      <div class="comment_date pull-right">
+        <abbr class="post-date" title={$comment_date|date_format:"%Y-%m-%dT%TZ"}>{$comment_date|date_format:"%b %d, %Y"}</abbr>
+      </div>
+      <div class="comment_content">{$comment_content}</div>
+    </div>
+  </div>
 </div>

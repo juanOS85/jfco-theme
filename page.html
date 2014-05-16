@@ -14,10 +14,11 @@
 <div class="navbar-header">
 JFashion
 </div>
+{$search_form}
 </div>
 </nav>
 </header>
-<div class="container-fluid">
+<div class="container">
 <div class="row">
 <div class="col-md-9">
 {if $is_homepage}
@@ -36,6 +37,6 @@ JFashion
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
-<script>$(function(){var a=$('input[type="submit"], button'),b=$("textarea");a.attr("class","");a.addClass("btn");b.attr("class","");b.addClass("form-control");$(".post-date").timeago()});</script>
+<script>$.timeago.settings.strings={prefixAgo:"hace",prefixFromNow:"dentro de",suffixAgo:"",suffixFromNow:"",seconds:"menos de un minuto",minute:"un minuto",minutes:"unos %d minutos",hour:"una hora",hours:"%d horas",day:"un día",days:"%d días",month:"un mes",months:"%d meses",year:"un año",years:"%d años"};$(function(){var a=$('input[type="submit"], button'),c=$('input[type="text"]'),b=$("textarea");a.attr("class","");a.addClass("btn");c.attr("class","");c.addClass("form-control");b.attr("class","");b.addClass("form-control");$("nav form").attr("class","");$("nav form").addClass(".navbar-form navbar-right");$("nav form .form-item input").attr("placeholder","Search").val("");$(".onsugar-box").insertBefore(".comment:first");$(".post-date").timeago()});</script>
 </body>
 </html>

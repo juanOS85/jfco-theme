@@ -17,11 +17,13 @@
           <div class="navbar-header">
             JFashion
           </div>
+
+          {$search_form}
         </div>
       </nav>
     </header>
 
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-md-9">
           {if $is_homepage}
@@ -47,15 +49,46 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
 
     <script>
+      $.timeago.settings.strings = {
+        prefixAgo: "hace",
+        prefixFromNow: "dentro de",
+        suffixAgo: "",
+        suffixFromNow: "",
+        seconds: "menos de un minuto",
+        minute: "un minuto",
+        minutes: "unos %d minutos",
+        hour: "una hora",
+        hours: "%d horas",
+        day: "un día",
+        days: "%d días",
+        month: "un mes",
+        months: "%d meses",
+        year: "un año",
+        years: "%d años"
+      };
+
       $(function() {
+        // General
         var $buttons = $('input[type="submit"], button'),
+          $textfields = $('input[type="text"]'),
           $textareas = $('textarea');
 
         $buttons.attr('class', '');
         $buttons.addClass('btn');
 
+        $textfields.attr('class', '');
+        $textfields.addClass('form-control');
+
         $textareas.attr('class', '');
         $textareas.addClass('form-control');
+
+        // Navbar
+        $('nav form').attr('class', '');
+        $('nav form').addClass('.navbar-form navbar-right');
+        $('nav form .form-item input').attr('placeholder', 'Search').val('');
+
+        // Comments
+        $('.onsugar-box').insertBefore('.comment:first');
 
         $('.post-date').timeago();
       });
