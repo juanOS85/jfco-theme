@@ -1,17 +1,34 @@
-
+{if $post_page}
 <article>
 <header>
 {if $post_title}
-<h2><a href="{$post_url}" rel="bookmark" title="Permanent Link to '{$post_title|escape:'html'}'">{$post_title}</a></h2>
+<h2>{$post_title}</h2>
 {/if}
-<div class="post-meta">
-<em>Publicado por <span class="post-author">{$post_author}</span> <abbr class="post-date" title={$created|date_format:"%Y-%m-%dT%TZ"}>{$created|date_format:"%b %d, %Y"}</abbr></em>
-</div>
 </header>
 <div class="post-body">
-{$post_content}
-<div class="read-more">
-<a href="{$post_url}#comment">{$post_comments}</a>
+<div class="post-tags">
+{$post_tags}
 </div>
 </div>
 </article>
+{else}
+<article>
+<header>
+{if $post_title}
+<h2>
+<a href="{$post_permalink}" rel="bookmark" title="Permanent Link to '{$post_title|escape:'html'}'">{$post_title}</a>
+</h2>
+{/if}
+<div class="post-meta">
+<em>Por <span class="post-author">{$post_author}</span> <abbr class="post-date" title={$created|date_format:"%Y-%m-%dT%TZ"}>{$created|date_format:"%b %d, %Y"}</abbr></em>
+</div>
+</header>
+<div class="post-body">
+{$post_teaser_content}
+<div class="read-more">
+<a href="{$post_permalink}#disqus_thread"></a>
+
+</div>
+</div>
+</article>
+{/if}

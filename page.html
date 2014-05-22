@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 <title>{$page_title}</title>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
-<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet" type="text/css">
+<link href="//oss.maxcdn.com/rrssb/1.6.0/css/rrssb.css" rel="stylesheet" type="text/css">
+<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 {$head}
 </head>
 <body>
@@ -14,6 +15,7 @@
 <div class="navbar-header">
 JFashion
 </div>
+{if $pages}{$pages}{/if}
 {$search_form}
 </div>
 </nav>
@@ -21,15 +23,13 @@ JFashion
 <div class="container">
 <div class="row">
 <div class="col-md-9">
-{if $is_homepage}
-<div class="posts-list">
-{/if}
-{$page_content}
-{if $is_homepage}
+<div class="{if $is_homepage}posts-list{else}post-detail{/if}">{$page_content}</div>
 </div>
-{/if}
+<div class="col-md-3 visible-lg">
+<div class="row visible-lg">
+<a class="twitter-timeline" href="https://twitter.com/paolira" data-widget-id="380513254113411073">Tweets por @paolira</a>
 </div>
-<div class="col-md-3 hidden-xs"></div>
+</div>
 </div>
 </div>
 <footer>
@@ -37,6 +37,7 @@ JFashion
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
-<script>$.timeago.settings.strings={prefixAgo:"hace",prefixFromNow:"dentro de",suffixAgo:"",suffixFromNow:"",seconds:"menos de un minuto",minute:"un minuto",minutes:"unos %d minutos",hour:"una hora",hours:"%d horas",day:"un día",days:"%d días",month:"un mes",months:"%d meses",year:"un año",years:"%d años"};$(function(){var a=$('input[type="submit"], button'),c=$('input[type="text"]'),b=$("textarea");a.attr("class","");a.addClass("btn");c.attr("class","");c.addClass("form-control");b.attr("class","");b.addClass("form-control");$("nav form").attr("class","");$("nav form").addClass(".navbar-form navbar-right");$("nav form .form-item input").attr("placeholder","Search").val("");$(".onsugar-box").insertBefore(".comment:first");$(".post-date").timeago()});</script>
+<script type="text/javascript" src="//oss.maxcdn.com/rrssb/1.6.0/js/rrssb.min.js"></script>
+<script>var disqus_shortname="jfashionblog";$.timeago.settings.strings={prefixAgo:"hace",prefixFromNow:"dentro de",suffixAgo:"",suffixFromNow:"",seconds:"menos de un minuto",minute:"un minuto",minutes:"unos %d minutos",hour:"una hora",hours:"%d horas",day:"un día",days:"%d días",month:"un mes",months:"%d meses",year:"un año",years:"%d años"};$(function(){var a=$('input[type="submit"], button'),c=$('input[type="text"]');a.attr("class","");a.addClass("btn");c.attr("class","");c.addClass("form-control");$("nav ul").addClass("nav navbar-nav");$("nav form").attr("class","");$("nav form").addClass("navbar-form navbar-right");$("nav form .form-item input").attr("placeholder","Buscar en JFashion").val("");$(".post-date").timeago();var b=document.createElement("ul");$(".post-tags .taxonomy").each(function(){var d=document.createElement("li");d.appendChild($(this).find("b a")[0]);b.appendChild(d);$(this).remove()});$(".post-tags").append(b);$("#content-container noscript").nextAll().remove()});!function(f,a,g){var e,b=f.getElementsByTagName(a)[0],c=/^http:/.test(f.location)?"http":"https";if(!f.getElementById(g)){e=f.createElement(a);e.id=g;e.src=c+"://platform.twitter.com/widgets.js";b.parentNode.insertBefore(e,b)}}(document,"script","twitter-wjs");(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;var b=document.createElement("script");b.async=true;b.type="text/javascript";a.src="//"+disqus_shortname+".disqus.com/embed.js";b.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a);(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(b)})();</script>
 </body>
 </html>
