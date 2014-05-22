@@ -1,12 +1,13 @@
 body {
-  font: 200 62.5%/1.6 "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+  font: 400 62.5%/1.6 "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
   padding-top: 70px; }
 
 a, a:visited {
   color: #7f0d44; }
 
 p {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  margin: 0 0 2rem; }
 
 .navbar {
   background-color: #7f0d44;
@@ -98,3 +99,6 @@ p {
 
 .onsugar-box {
   display: none; }
+
+#site-controls {
+  padding-top: 70px; }
