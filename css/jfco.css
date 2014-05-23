@@ -1,3 +1,6 @@
+@font-face {
+  font-family: "Sketch Block";
+  src: url(https://googledrive.com/host/0Bxy3gfG9BhVAOVc3ZGpCbGgyelk/Sketch_Block.ttf); }
 body {
   font: 400 62.5%/1.6 "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
   padding-top: 70px; }
@@ -10,8 +13,12 @@ p {
   margin: 0 0 2rem; }
 
 .navbar {
-  background-color: #7f0d44;
+  background-color: beige;
   opacity: 0.9; }
+  .navbar .navbar-brand {
+    color: #7f0d44;
+    font-family: "Sketch Block";
+    font-size: 4.5rem; }
   .navbar .navbar-nav {
     font-size: 1.6rem; }
     .navbar .navbar-nav span {

@@ -1,6 +1,6 @@
 // Variables
 // Colors
-//$burgundy: #840e47
+$baige: #F5F5DC
 $burgundy: #7f0d44
 $black: #000
 $light_gray: #eee
@@ -9,6 +9,10 @@ $white: #fff
 
 // Fonts
 $primary-font: "Helvetica Neue", Helvetica, "Open Sans", sans-serif
+
+@font-face
+  font-family: "Sketch Block"
+  src: url(https://googledrive.com/host/0Bxy3gfG9BhVAOVc3ZGpCbGgyelk/Sketch_Block.ttf)
 
 // Global
 body
@@ -23,8 +27,13 @@ p
   margin: 0 0 2rem
 
 .navbar
-  background-color: $burgundy
+  background-color: $baige
   opacity: 0.9
+
+  .navbar-brand
+    color: $burgundy
+    font-family: "Sketch Block"
+    font-size: 4.5rem
 
   .navbar-nav
     font-size: 1.6rem

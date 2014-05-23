@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a href="/" title="JFashion">JFashion</a>
+            <a class="navbar-brand" href="/" title="JFashion">JFashion</a>
           </div>
 
           <div id="jfco-navbar-collapse" class="collapse navbar-collapse">
@@ -78,7 +78,7 @@
 
       $(function() {
         // General
-        var $buttons = $('input[type="submit"], button'),
+        var $buttons = $('input[type="submit"], button:not(.navbar-toggle)'),
           $textfields = $('input[type="text"]');
 
         $buttons.attr('class', '');
@@ -96,7 +96,7 @@
         $('.post-date').timeago();
 
         // Tags list
-        var ul = document.createElement('ul');
+        /*var ul = document.createElement('ul');
 
         $('.post-tags .taxonomy').each(function() {
           var li = document.createElement('li');
@@ -106,7 +106,7 @@
           $(this).remove();
         });
 
-        $('.post-tags').append(ul);
+        $('.post-tags').append(ul);*/
 
         $('#content-container noscript').nextAll().remove();
       });
