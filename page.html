@@ -2,9 +2,11 @@
 <html lang="es">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>{$page_title}</title>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet" type="text/css">
-<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 {$page_head}
 </head>
 <body>
@@ -20,7 +22,7 @@
 </button>
 <a class="navbar-brand" href="/" title="JFashion">JFashion</a>
 </div>
-<div id="jfco-navbar-collapse" class="collapse navbar-collapse">
+<div class="collapse navbar-collapse" id="jfco-navbar-collapse">
 {if $pages}{$pages}{/if}
 {$search_form}
 </div>
@@ -29,22 +31,23 @@
 </header>
 <div class="container">
 <div class="row">
-<div class="col-sm-9">
-<div class="{if $is_homepage}posts-list{else}post-detail{/if}">{$page_content}</div>
+<div class="{if $is_homepage}posts-list{else}post-detail{/if} col-sm-9">
+{$page_content}
+<ul class="pagination"></ul>
 </div>
 <div class="col-sm-3 visible-lg">
-<div class="row visible-lg">
-<a class="twitter-timeline" href="https://twitter.com/paolira" data-widget-id="380513254113411073">Tweets por @paolira</a>
+<div>
+<a class="twitter-timeline" data-widget-id="380513254113411073" href="https://twitter.com/paolira">Tweets por @paolira</a>
 </div>
 </div>
 </div>
 </div>
 <footer>
 </footer>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="////cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
-<script>var disqus_shortname="jfashionblog";$.timeago.settings.strings={prefixAgo:"hace",prefixFromNow:"dentro de",suffixAgo:"",suffixFromNow:"",seconds:"menos de un minuto",minute:"un minuto",minutes:"unos %d minutos",hour:"una hora",hours:"%d horas",day:"un día",days:"%d días",month:"un mes",months:"%d meses",year:"un año",years:"%d años"};$(function(){var a=$('input[type="submit"], button:not(.navbar-toggle)'),b=$('input[type="text"]');a.attr("class","");a.addClass("btn");b.attr("class","");b.addClass("form-control");$("nav ul").addClass("nav navbar-nav");$("nav form").attr("class","");$("nav form").addClass("navbar-form navbar-right");$("nav form .form-item input").attr("placeholder","Buscar en JFashion").val("");$(".post-date").timeago();$("#content-container noscript").nextAll().remove()});!function(f,a,g){var e,b=f.getElementsByTagName(a)[0],c=/^http:/.test(f.location)?"http":"https";if(!f.getElementById(g)){e=f.createElement(a);e.id=g;e.src=c+"://platform.twitter.com/widgets.js";b.parentNode.insertBefore(e,b)}}(document,"script","twitter-wjs");(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;var b=document.createElement("script");b.async=true;b.type="text/javascript";a.src="//"+disqus_shortname+".disqus.com/embed.js";b.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a);(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(b)})();</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
+<script>var disqus_shortname="jfashionblog";$.timeago.settings.strings={prefixAgo:"hace",prefixFromNow:"dentro de",suffixAgo:"",suffixFromNow:"",seconds:"menos de un minuto",minute:"un minuto",minutes:"unos %d minutos",hour:"una hora",hours:"%d horas",day:"un día",days:"%d días",month:"un mes",months:"%d meses",year:"un año",years:"%d años"};$(function(){var b=$('input[type="submit"], button:not(.navbar-toggle)'),c=$('input[type="text"]'),a=$("#pager");b.attr("class","");b.addClass("btn");c.attr("class","");c.addClass("form-control");$("nav ul").addClass("nav navbar-nav");$("nav form").attr("class","");$("nav form").addClass("navbar-form navbar-right");$("nav form .form-item input").attr("placeholder","Buscar en JFashion").val("");$(".post-date").timeago();a.find(".pager-list").children().each(function(g,f){var d=document.createElement("li"),e=document.createElement("a");if($(this).is("strong")){d.className="active"}e.href=f.href;e.innerText=f.innerText;d.appendChild(e);$(".pagination").append(d)});a.remove();$("#content-container noscript").nextAll().remove()});!function(f,a,g){var e,b=f.getElementsByTagName(a)[0],c=/^http:/.test(f.location)?"http":"https";if(!f.getElementById(g)){e=f.createElement(a);e.id=g;e.src=c+"://platform.twitter.com/widgets.js";b.parentNode.insertBefore(e,b)}}(document,"script","twitter-wjs");</script>
 </body>
 </html>

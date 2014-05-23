@@ -24,7 +24,7 @@ p {
     .navbar .navbar-nav span {
       color: white; }
   .navbar .navbar-form {
-    width: 342px; }
+    width: 27%; }
     .navbar .navbar-form .form-item {
       float: left;
       margin-right: 0.5rem; }
@@ -53,6 +53,14 @@ p {
     font-size: 1.4rem;
     margin-top: 1.5rem;
     padding: 0.5rem 1rem; }
+.posts-list .pagination {
+  font-size: 1.4rem; }
+  .posts-list .pagination a {
+    color: #7f0d44; }
+  .posts-list .pagination .active a {
+    color: beige;
+    background-color: #7f0d44;
+    border-color: #7f0d44; }
 
 .post-detail .post-tags ul {
   list-style: none; }
