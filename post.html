@@ -3,13 +3,18 @@
 <header>
 {if $post_title}
 <h2>{$post_title}</h2>
+{if $post_edit}<span class="edit">{$post_edit}</span>{/if}
 {/if}
 </header>
 <div class="post-body">
+{$post_content}
 <div class="post-tags">
 {$post_tags}
 </div>
 </div>
+<footer>
+<div id="disqus_thread"></div>
+</footer>
 </article>
 {else}
 <article>

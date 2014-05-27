@@ -31,9 +31,14 @@
 </header>
 <div class="container">
 <div class="row">
-<div class="{if $is_homepage}posts-list{else}post-detail{/if} col-sm-9">
+<div class="{if $is_homepage or $page_tag}posts-list{else}post-detail{/if} col-sm-9">
 {$page_content}
-<ul class="pagination"></ul>
+{if $is_homepage}
+<ul class="pagination pagination-sm">
+<li><a id="pagination-first" href="#">&laquo;</a></li>
+<li><a id="pagination-last" href="#">&raquo;</a></li>
+</ul>
+{/if}
 </div>
 <div class="col-sm-3 visible-lg">
 <div>
@@ -42,12 +47,21 @@
 </div>
 </div>
 </div>
-<footer>
+<footer class="page-footer container-fluid">
+{$page_footer}
+<div class="template_author pull-left">JFashion theme created by <a href="http://about.me/juanchopx2" title="Juan Obando">Juan Obando</a></div>
 </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
-<script>var disqus_shortname="jfashionblog";$.timeago.settings.strings={prefixAgo:"hace",prefixFromNow:"dentro de",suffixAgo:"",suffixFromNow:"",seconds:"menos de un minuto",minute:"un minuto",minutes:"unos %d minutos",hour:"una hora",hours:"%d horas",day:"un día",days:"%d días",month:"un mes",months:"%d meses",year:"un año",years:"%d años"};$(function(){var b=$('input[type="submit"], button:not(.navbar-toggle)'),c=$('input[type="text"]'),a=$("#pager");b.attr("class","");b.addClass("btn");c.attr("class","");c.addClass("form-control");$("nav ul").addClass("nav navbar-nav");$("nav form").attr("class","");$("nav form").addClass("navbar-form navbar-right");$("nav form .form-item input").attr("placeholder","Buscar en JFashion").val("");$(".post-date").timeago();a.find(".pager-list").children().each(function(g,f){var d=document.createElement("li"),e=document.createElement("a");if($(this).is("strong")){d.className="active"}e.href=f.href;e.innerText=f.innerText;d.appendChild(e);$(".pagination").append(d)});a.remove();$("#content-container noscript").nextAll().remove()});!function(f,a,g){var e,b=f.getElementsByTagName(a)[0],c=/^http:/.test(f.location)?"http":"https";if(!f.getElementById(g)){e=f.createElement(a);e.id=g;e.src=c+"://platform.twitter.com/widgets.js";b.parentNode.insertBefore(e,b)}}(document,"script","twitter-wjs");</script>
+<script>var disqus_shortname="jfashionblog";$.timeago.settings.strings={prefixAgo:"hace",prefixFromNow:"dentro de",suffixAgo:"",suffixFromNow:"",seconds:"menos de un minuto",minute:"un minuto",minutes:"unos %d minutos",hour:"una hora",hours:"%d horas",day:"un día",days:"%d días",month:"un mes",months:"%d meses",year:"un año",years:"%d años"};$(function(){var b=$('input[type="submit"], button:not(.navbar-toggle)'),c=$('input[type="text"]'),a=$("#pager");b.attr("class","");b.addClass("btn");c.attr("class","");c.addClass("form-control");$("nav ul").addClass("nav navbar-nav");$("nav form").attr("class","");$("nav form").addClass("navbar-form navbar-right");$("nav form .form-item input").attr("placeholder","Buscar en JFashion").val("");$(".post-date").timeago();a.find(".pager-list").children().each(function(g,f){var d=document.createElement("li"),e=document.createElement("a");if($(this).is("strong")){d.className="active"}e.href=f.href;e.innerText=f.innerText;d.appendChild(e);$(".pagination li:last").before(d)});if(a.find(".pager-first").length){$("#pagination-first").attr("href","/")}else{$("#pagination-first").removeAttr("href");$("#pagination-first").parent().addClass("disabled")}if(a.find(".pager-last").length){$("#pagination-last").attr("href",a.find(".pager-last").attr("href"))}else{$("#pagination-last").removeAttr("href");$("#pagination-last").parent().addClass("disabled")}a.remove();$("#content-container noscript").nextAll().remove()});!function(f,a,g){var e,b=f.getElementsByTagName(a)[0],c=/^http:/.test(f.location)?"http":"https";if(!f.getElementById(g)){e=f.createElement(a);e.id=g;e.src=c+"://platform.twitter.com/widgets.js";b.parentNode.insertBefore(e,b)}}(document,"script","twitter-wjs");</script>
+
+{if $is_homepage or $page_tag}
+<script>(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
+{else}
+<script>(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)})();</script>
+{/if}
+
 </body>
 </html>

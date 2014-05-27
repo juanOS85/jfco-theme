@@ -37,10 +37,15 @@
 
     <div class="container">
       <div class="row">
-        <div class="{if $is_homepage}posts-list{else}post-detail{/if} col-sm-9">
+        <div class="{if $is_homepage or $page_tag}posts-list{else}post-detail{/if} col-sm-9">
           {$page_content}
 
-          <ul class="pagination"></ul>
+          {if $is_homepage}
+            <ul class="pagination pagination-sm">
+              <li><a id="pagination-first" href="#">&laquo;</a></li>
+              <li><a id="pagination-last" href="#">&raquo;</a></li>
+            </ul>
+          {/if}
         </div>
 
         <div class="col-sm-3 visible-lg">
@@ -51,7 +56,9 @@
       </div>
     </div>
 
-    <footer>
+    <footer class="page-footer container-fluid">
+      {$page_footer}
+      <div class="template_author pull-left">JFashion theme created by <a href="http://about.me/juanchopx2" title="Juan Obando">Juan Obando</a></div>
     </footer>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
@@ -92,15 +99,22 @@
         $textfields.attr('class', '');
         $textfields.addClass('form-control');
 
-        // Navbar
+        /************************************************************************
+         Navbar
+        ************************************************************************/
         $('nav ul').addClass('nav navbar-nav');
         $('nav form').attr('class', '');
         $('nav form').addClass('navbar-form navbar-right');
         $('nav form .form-item input').attr('placeholder', 'Buscar en JFashion').val('');
+        /************************************************************************
+         End of: Navbar
+        ************************************************************************/
 
         $('.post-date').timeago();
 
-        // Pager
+        /************************************************************************
+         Pager
+        ************************************************************************/
         $onsugar_pager.find('.pager-list').children().each(function(ind, elem) {
           var li = document.createElement('li'),
             anchor = document.createElement('a');
@@ -113,9 +127,27 @@
           anchor.innerText = elem.innerText;
           li.appendChild(anchor);
 
-          $('.pagination').append(li);
+          $('.pagination li:last').before(li);
         });
+
+        if ($onsugar_pager.find('.pager-first').length) {
+          $('#pagination-first').attr('href', '/');
+        } else {
+          $('#pagination-first').removeAttr('href');
+          $('#pagination-first').parent().addClass('disabled');
+        }
+
+        if ($onsugar_pager.find('.pager-last').length) {
+          $('#pagination-last').attr('href', $onsugar_pager.find('.pager-last').attr('href'));
+        } else {
+          $('#pagination-last').removeAttr('href');
+          $('#pagination-last').parent().addClass('disabled');
+        }
+
         $onsugar_pager.remove();
+        /************************************************************************
+         End of: Pager
+        ************************************************************************/
 
         // Tags list
         /*var ul = document.createElement('ul');
@@ -133,19 +165,31 @@
         $('#content-container noscript').nextAll().remove();
       });
 
-      // Twitter widget
+      /************************************************************************
+        Twitter widget
+      ************************************************************************/
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-
-      // Disqus
-      /*(function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
-      })();*/
     </script>
+
+    <!-- Disqus -->
+    {if $is_homepage or $page_tag}
+      <script>
+        (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+      </script>
+    {else}
+      <script>
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    {/if}
+    <!-- End of: Disqus -->
   </body>
 </html>

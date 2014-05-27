@@ -26,6 +26,9 @@ p
   font-size: 1.6rem
   margin: 0 0 2rem
 
+img
+  margin: 0 auto
+
 // Navbar
 .navbar
   background-color: $baige
@@ -38,16 +41,43 @@ p
 
   .navbar-nav
     font-size: 1.6rem
-
     span
-      color: $white
+      color: $burgundy
+    .active a
+      background-color: $burgundy
+      span
+        color: $baige
 
   .navbar-form
-    width: 27%
-
+    width: 35rem
     .form-item
       float: left
       margin-right: 0.5rem
+
+@media (max-width: 768px)
+  .navbar
+    opacity: 1
+
+// Footer
+.page-footer
+  background-color: $burgundy
+  color: $white
+  font-size: 1.4rem
+  padding: 1rem 3rem
+  a
+    color: $baige
+  .template_author
+    font-size: 1.2rem
+    margin-top: 1rem
+    width: 100%
+
+@media (max-width: 768px)
+  .page-footer
+    font-size: 1.3rem
+    padding-left: 2rem
+    padding-right: 2rem
+    .template_author
+      font-size: 1.1rem
 
 // Posts list
 .posts-list
@@ -84,8 +114,6 @@ p
       padding: 0.5rem 1rem
 
   .pagination
-    font-size: 1.4rem
-
     a
       color: $burgundy
 
@@ -151,6 +179,25 @@ p
   margin: 2rem 0
 
 // OnSugar components
+#footer_nav ul
+  float: right
+  list-style-type: none
+  li
+    margin-left: 2rem
+    float: left
+
+#footer_site
+  float: left
+
+@media (max-width: 768px)
+  #footer_nav ul
+    float: left
+    padding-left: 0
+    li
+      margin-left: 1rem
+      &:first-child
+        margin-left: 0
+
 .onsugar-box
   display: none
 
