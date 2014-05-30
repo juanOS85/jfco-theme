@@ -8,6 +8,7 @@
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 {$page_head}
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 </head>
 <body>
 <header>
@@ -29,21 +30,21 @@
 </div>
 </nav>
 </header>
-<div class="container">
+<div class="container-fluid">
 <div class="row">
+<div class="col-sm-3 visible-lg">
+<div>
+<a class="twitter-timeline" data-widget-id="380513254113411073" href="https://twitter.com/paolira">Tweets por @paolira</a>
+</div>
+</div>
 <div class="{if $is_homepage or $page_tag}posts-list{else}post-detail{/if} col-sm-9">
 {$page_content}
-{if $is_homepage}
+{if $is_homepage or $page_tag}
 <ul class="pagination pagination-sm">
 <li><a id="pagination-first" href="#">&laquo;</a></li>
 <li><a id="pagination-last" href="#">&raquo;</a></li>
 </ul>
 {/if}
-</div>
-<div class="col-sm-3 visible-lg">
-<div>
-<a class="twitter-timeline" data-widget-id="380513254113411073" href="https://twitter.com/paolira">Tweets por @paolira</a>
-</div>
 </div>
 </div>
 </div>
@@ -51,7 +52,6 @@
 {$page_footer}
 <div class="template_author pull-left">JFashion theme created by <a href="http://about.me/juanchopx2" title="Juan Obando">Juan Obando</a></div>
 </footer>
-<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
